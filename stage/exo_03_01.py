@@ -14,3 +14,16 @@ if episode[3]:
     print("l'épisode a été vu")
 else:
     print("l'épisode n'a pas été vu")
+
+# avec fonction
+import stage.media_utils as utils
+
+if utils.is_viewed(episode_viewed):
+    print("l'épisode a été vu")
+else:
+    print("l'épisode n'a pas été vu")
+
+if utils.is_viewed(episode_not_viewed):
+    print("l'épisode a été vu")
+else:
+    print("l'épisode n'a pas été vu")
