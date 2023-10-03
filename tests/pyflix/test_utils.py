@@ -1,3 +1,5 @@
+import pytest
+
 from stage.pyflix import utils
 
 
@@ -21,6 +23,11 @@ def test_episode_not_viewed_as_int():
     assert utils.is_viewed(episode_not_viewed) is False
 
 
+def test_episode_not_viewed_without_arg():
+    episode_not_viewed = ['Installing the softwares', 2, 42]
+    assert utils.is_viewed(episode_not_viewed) is False
+
+
 def test_get_minutes_from_zero():
     assert utils.to_minutes(0) == 0
 
@@ -39,3 +46,18 @@ def test_get_minutes_from_two_hours_and_30_minutes():
 
 def test_get_minutes_from_two_hours_and_30_str_minutes():
     assert utils.to_minutes(2, "30") == 150
+
+
+def test_get_minutes_from_neg_hours():
+    with pytest.raises(ValueError):
+        utils.to_minutes(-2, 30)
+
+
+def test_get_minutes_from_neg_minutes():
+    with pytest.raises(ValueError, match="minutes doit être positif"):
+        utils.to_minutes(2, -30)
+
+
+def test_get_minutes_with_str():
+    with pytest.raises(ValueError, match="invalid literal for int() with base 10"):
+        utils.to_minutes("blabla")
