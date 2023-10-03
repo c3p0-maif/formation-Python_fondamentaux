@@ -16,14 +16,14 @@ else:
     print("l'épisode n'a pas été vu")
 
 # avec fonction
-import stage.media_utils as utils
+import stage.pyflix.utils as putils
 
-if utils.is_viewed(episode_viewed):
+if putils.is_viewed(episode_viewed):
     print("l'épisode a été vu")
 else:
     print("l'épisode n'a pas été vu")
 
-if utils.is_viewed(episode_not_viewed):
+if putils.is_viewed(episode_not_viewed):
     print("l'épisode a été vu")
 else:
     print("l'épisode n'a pas été vu")
