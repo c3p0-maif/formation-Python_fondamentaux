@@ -1,0 +1,6 @@
+DISTANCE = 19.7
+TIME = 6.892
+DISTANCE_UNIT = 'm'
+TIME_UNIT = 's'
+
+print(f"{DISTANCE}{DISTANCE_UNIT} en {TIME}{TIME_UNIT} correspond à une vitesse de {DISTANCE/TIME:.2f}{DISTANCE_UNIT}/{TIME_UNIT}")
