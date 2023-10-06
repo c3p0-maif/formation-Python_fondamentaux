@@ -43,11 +43,11 @@ if __name__ == "__main__":
     print("Exo 15")
     playlist = get_playlist_from(bbt_s12)
 
-    total_minutes = 0
-    while playlist and "duration" in playlist[0] and total_minutes + playlist[0]["duration"] < 120:
+    remaining_time = 120
+    while playlist and remaining_time > playlist[0].get("duration", 0):
         episode = playlist.pop(0)
         episode["viewed"] = True
-        total_minutes += episode["duration"]
+        remaining_time -= episode["duration"]
         print(episode["title"])
 
     pprint(bbt_s12)

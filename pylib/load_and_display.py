@@ -5,6 +5,7 @@ import pylib.file_utils as fu  # Module de la fonction chargeant les information
 import pylib.pyflix.media_db as media  # Module contenant les objets liés à la gestion des médias
 from pylib.utils import cli
 
+import logging
 
 def load_data_from_path(path:str, shows:dict[str, media.TvShow] = None) -> dict[str, media.TvShow]:
     """
@@ -45,7 +46,6 @@ def load_data_from_path(path:str, shows:dict[str, media.TvShow] = None) -> dict[
 
 
 if __name__ == "__main__":
-    import logging
 
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s - %(levelname)s - %(message)s",
